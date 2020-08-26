@@ -1,0 +1,7 @@
+export const  CREATE_CONTACT ='CREATE_CONTACT';
+export const  EDIT_CONTACT ='EDIT_CONTACT';
+export const  GET_CONTACT ='GET_CONTACT';
+export const DELETE_CONTACT = 'DELETE_CONTACT';
+export const SELECT_ALL = 'SELECT_ALL';
+export const CLEAR_ALL = 'CLEAR_ALL';
+export const DELETE_SELETED_ALL = 'DELETE_SELETED_ALL'

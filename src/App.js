@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './styles/App.scss';
+import Navbar from './components/layouts/Navbar';
+import Contacts from './components/contact/Contacts';
+import AddContact from './components/contact/AddContact';
+import EditContact from './components/contact/EditContact';
+import {Provider} from 'react-redux';
+import store from './store';
+import {BrowserRouter as Router , Route , Switch} from 'react-router-dom'
 function App() {
   return (
+    <Provider store={store}>
+    <Router>  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navbar/>
+     <div className="py-3">
+       <Switch> 
+        <Route exact path="/" component={Contacts}/> 
+        <Route exact path="/create" component={AddContact}/>
+        <Route exact path="/edit/:id" component={EditContact}/>
+    </Switch> 
+       </div>
     </div>
+    </Router>
+    </Provider>
   );
 }
 
